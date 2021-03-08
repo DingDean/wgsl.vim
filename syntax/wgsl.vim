@@ -7,6 +7,22 @@ if exists("b:current_syntax")
 endif
 
 " Builtin Types
+syn keyword wgslTypes void
+syn keyword wgslNumberTypes u32 i32 f32 bool
+" TODO: match the whole vecN<T> pattern
+syn keyword wgslTypes vec2 vec3 vec4
+" TODO mat2x2 and 432 has different syntax
+syn keyword wgslTypes mat2x2 mat2x3 mat2x4 mat3x2 mat3x3 mat3x4 mat4x2 mat4x3 mat4x4
+syn keyword wgslTypes array
+" TODO: match struct 
+syn keyword wgslTypes struct
+" TODO: since token 'handle' is reserved and it's never used in a wgsl
+" program, shoud we set this to a keyword?
+syn keyword wgslStorageClasses handle
+syn keyword wgslStorageClasses in out function private workgroup uniform storage handle
+syn keyword wgslPointerTypes ptr
+
+" Expressions
 
 " Builtin Variables
 syn keyword wgslBuiltinVariables vertex_index instance_index position 
@@ -33,10 +49,23 @@ syn keyword wgslDataPackingBuiltinFunctions unpack4x8snorm unpack4x8unorm unpack
 
 " Keyword
 syn keyword wgslKeywords fn nextgroup=wgslFuncName skipwhite skipempty
+syn keyword wgslKeywords location nextgroup=wgslLocation skipwhite skipempty
+syn match wgslFuncName "\%(r#\)\=\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
+syn match nextLocation "\(\d\)"
+
+
+
+hi def link wgslTypes Type
+hi def link wgslNumberTypes Float
+hi def link wgslStorageClasses Type
+hi def link wgslPointerTypes Type
 
 hi def link wgslBuiltinVariables Identifier
 hi def link wgslBuiltinFunctions Function
 hi def link wgslBuiltinTextureFunctions Function
+hi def link wgslFuncName Function
+
 hi def link wgslKeywords Keyword
+hi def link wgslLocation Number
 
 let b:current_syntax = "wgsl"
