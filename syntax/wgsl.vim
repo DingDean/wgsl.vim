@@ -48,8 +48,12 @@ syn keyword wgslDataPackingBuiltinFunctions unpack4x8snorm unpack4x8unorm unpack
 
 
 " Keyword
+syn keyword wgslKeywords var
+syn keyword wgslKeywords location stage vertex fragment builtin
 syn keyword wgslKeywords fn nextgroup=wgslFuncName skipwhite skipempty
 syn keyword wgslKeywords location nextgroup=wgslLocation skipwhite skipempty
+syn keyword wgslKeywords binding nextgroup=wgslLocation skipwhite skipempty
+syn keyword wgslKeywords group nextgroup=wgslLocation skipwhite skipempty
 syn match wgslFuncName "\%(r#\)\=\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
 syn match nextLocation "\(\d\)"
 
