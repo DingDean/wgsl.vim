@@ -22,10 +22,26 @@ syn keyword wgslStorageClasses handle
 syn keyword wgslStorageClasses in out function private workgroup uniform storage handle
 syn keyword wgslPointerTypes ptr
 
+" Texel Format
+syn keyword wgslTexelFormat R8UNORM R8SNORM R8UINT R8SINT R16UINT R16SINT R16FLOAT RG8UNORM 
+syn keyword wgslTexelFormat RG8SNORM RG8UINT RG8SINT R32UINT R32SINT R32FLOAT RG16UINT RG16SINT
+syn keyword wgslTexelFormat RG16FLOAT RGBA8UNORM RGBA8UNORM-SRGB RGBA8SNORM RGBA8UINT RGBA8SINT BGRA8UNORM 
+syn keyword wgslTexelFormat RGB10A2UNORM RG11B10FLOAT RG32UINT RG32SINT RG32FLOAT RGBA16UINT
+syn keyword wgslTexelFormat RGBA16SINT RGBA16FLOAT RGBA32UINT RGBA32SINT RGBA32FLOAT
+" Texture Types 
+syn keyword wgslTextureTypes texture_1d texture_2d texture_2d_array
+syn keyword wgslTextureTypes texture_3d texture_cube texture_cube_array
+syn keyword wgslTextureTypes texture_multisampled_2d texture_storage_3d
+syn keyword wgslTextureTypes texture_storage_1d texture_storage_2d texture_storage_2d_array 
+syn keyword wgslTextureTypes texture_depth_2d texture_depth_2d_array texture_depth_cube texture_depth_cube_array
+" Sampler Types
+syn keyword wgslSamplerTypes sampler sampler_comparison
+
+
 " Expressions
 
 " Builtin Variables
-syn keyword wgslBuiltinVariables vertex_index instance_index position 
+syn keyword wgslBuiltinVariables vertex_index instance_index
 syn keyword wgslBuiltinVariables frag_coord front_facing frag_depth
 syn keyword wgslBuiltinVariables local_invocation_id local_invocation_index global_invocation_id workgroup_id workgroup_size
 syn keyword wgslBuiltinVariables sample_index sample_mask_in smaple_mask_out 
@@ -57,17 +73,21 @@ syn keyword wgslKeywords group nextgroup=wgslLocation skipwhite skipempty
 syn match wgslFuncName "\%(r#\)\=\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
 syn match nextLocation "\(\d\)"
 
-
+syn match wgslFuncCall    "\w\(\w\)*("he=e-1,me=e-1
 
 hi def link wgslTypes Type
 hi def link wgslNumberTypes Float
 hi def link wgslStorageClasses Type
 hi def link wgslPointerTypes Type
+hi def link wgslTextureTypes Type
+hi def link wgslTexelFormat Type
+hi def link wgslSamplerTypes Type
 
 hi def link wgslBuiltinVariables Identifier
 hi def link wgslBuiltinFunctions Function
 hi def link wgslBuiltinTextureFunctions Function
 hi def link wgslFuncName Function
+hi def link wgslFuncCall Function
 
 hi def link wgslKeywords Keyword
 hi def link wgslLocation Number
