@@ -71,7 +71,7 @@ syn keyword wgslKeywords location nextgroup=wgslLocation skipwhite skipempty
 syn keyword wgslKeywords binding nextgroup=wgslLocation skipwhite skipempty
 syn keyword wgslKeywords group nextgroup=wgslLocation skipwhite skipempty
 syn match wgslFuncName "\%(r#\)\=\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
-syn match nextLocation "\(\d\)"
+syn match wgslLocation "\%(\d\)"
 
 syn match wgslFuncCall    "\w\(\w\)*("he=e-1,me=e-1
 
