@@ -44,6 +44,7 @@ syn region wgslCommentLine start="//" end="$"
 
 " Builtin Variables
 syn keyword wgslBuiltinVariables vertex_index instance_index
+syn keyword wgslBuiltinVariables position
 syn keyword wgslBuiltinVariables frag_coord front_facing frag_depth
 syn keyword wgslBuiltinVariables local_invocation_id local_invocation_index global_invocation_id workgroup_id workgroup_size
 syn keyword wgslBuiltinVariables sample_index sample_mask_in smaple_mask_out
@@ -66,8 +67,9 @@ syn keyword wgslDataPackingBuiltinFunctions unpack4x8snorm unpack4x8unorm unpack
 
 
 " Keyword
-syn keyword wgslKeywords var
-syn keyword wgslKeywords location stage vertex fragment builtin
+syn keyword wgslKeywords let var
+syn keyword wgslKeywords block builtin fragment location stage vertex
+syn keyword wgslKeywords break continue discard for if loop return switch
 syn keyword wgslKeywords fn nextgroup=wgslFuncName skipwhite skipempty
 syn keyword wgslKeywords location nextgroup=wgslLocation skipwhite skipempty
 syn keyword wgslKeywords binding nextgroup=wgslLocation skipwhite skipempty
