@@ -65,19 +65,19 @@ syn keyword wgslBuiltinTextureFunctions  textureSampleBias textureSampleCompare 
 syn keyword wgslDataPackingBuiltinFunctions pack4x8snorm pack4x8unorm pack2x16snorm pack2x16unorm pack2x16float
 syn keyword wgslDataPackingBuiltinFunctions unpack4x8snorm unpack4x8unorm unpack2x16snorm unpack2x16unorm unpack2x16float
 
+syn keyword wgslAttributes binding block builtin fragment group location stage vertex
 
 " Keyword
+syn keyword wgslKeywords fn
 syn keyword wgslKeywords let var
-syn keyword wgslKeywords block builtin fragment location stage vertex
 syn keyword wgslKeywords break continue discard for if loop return switch
-syn keyword wgslKeywords fn nextgroup=wgslFuncName skipwhite skipempty
-syn keyword wgslKeywords location nextgroup=wgslLocation skipwhite skipempty
-syn keyword wgslKeywords binding nextgroup=wgslLocation skipwhite skipempty
-syn keyword wgslKeywords group nextgroup=wgslLocation skipwhite skipempty
-syn match wgslFuncName "\%(r#\)\=\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*" display contained
-syn match wgslLocation "\%(\d\)"
 
 syn match wgslFuncCall    "\w\(\w\)*("he=e-1,me=e-1
+
+syntax match wgslNumber "\v<\d+>"
+syntax match wgslNumber "\v<(\d+_+)+\d+(\.\d+(_+\d+)*)?>"
+syntax match wgslNumber "\v<\d+\.\d+>"
+syntax match wgslNumber "\v<\d*\.?\d+([Ee]-?)?\d+>"
 
 hi def link wgslTypes Type
 hi def link wgslNumberTypes Float
@@ -90,12 +90,14 @@ hi def link wgslSamplerTypes Type
 hi def link wgslBuiltinVariables Identifier
 hi def link wgslBuiltinFunctions Function
 hi def link wgslBuiltinTextureFunctions Function
-hi def link wgslFuncName Function
 hi def link wgslFuncCall Function
 
+hi def link wgslAttributes Keyword
 hi def link wgslKeywords Keyword
 hi def link wgslLocation Number
 
 hi def link wgslCommentLine Comment
+
+hi def link wgslNumber Number
 
 let b:current_syntax = "wgsl"
