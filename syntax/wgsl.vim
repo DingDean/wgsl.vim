@@ -16,11 +16,12 @@ syn keyword wgslTypes mat2x2 mat2x3 mat2x4 mat3x2 mat3x3 mat3x4 mat4x2 mat4x3 ma
 syn keyword wgslTypes array
 " TODO: match struct
 syn keyword wgslTypes struct
+syn keyword wgslTypes type
 " TODO: since token 'handle' is reserved and it's never used in a wgsl
 " program, shoud we set this to a keyword?
 syn keyword wgslStorageClasses handle
-syn keyword wgslStorageClasses in out function private workgroup uniform storage handle
-syn keyword wgslPointerTypes ptr
+syn keyword wgslStorageClasses function private workgroup uniform storage handle
+syn keyword wgslPointerTypes ptr ref
 
 " Texel Format
 syn keyword wgslTexelFormat R8UNORM R8SNORM R8UINT R8SINT R16UINT R16SINT R16FLOAT RG8UNORM
