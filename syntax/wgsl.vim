@@ -75,8 +75,12 @@ syn keyword wgslKeywords break continue discard for if loop return switch
 
 syn match wgslFuncCall    "\w\(\w\)*("he=e-1,me=e-1
 
-syntax match wgslNumber "\v<\d+(\.\d+)?([Ee][-+]?\d+)?>"
-syntax match wgslNumber "\v\.\d+([Ee][-+]?\d+)?>"
+" Float
+syntax match wgslNumber "\v<\d+[Ee][-+]?\d+>"
+syntax match wgslNumber "\v\d*\.\d+([Ee][-+]?\d+)?>"
+
+" Integer
+syntax match wgslNumber "\v<\d+u?>"
 
 hi def link wgslTypes Type
 hi def link wgslNumberTypes Float
