@@ -85,6 +85,9 @@ syntax match wgslNumber "\v<0x\.\x+([Pp][-+]?\d+)?>"
 syntax match wgslNumber "\v<\d+u>"
 syntax match wgslNumber "\v<0x\x+u>"
 
+" Boolean
+syntax keyword wgslBoolean true false
+
 hi def link wgslTypes Type
 hi def link wgslNumberTypes Float
 hi def link wgslStorageClasses Type
@@ -105,5 +108,6 @@ hi def link wgslLocation Number
 hi def link wgslCommentLine Comment
 
 hi def link wgslNumber Number
+hi def link wgslBoolean Boolean
 
 let b:current_syntax = "wgsl"
