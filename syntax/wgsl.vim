@@ -17,6 +17,7 @@ syn keyword wgslTypes array
 " TODO: match struct
 syn keyword wgslTypes struct
 syn keyword wgslTypes type
+syn keyword wgslTypes atomic
 " TODO: since token 'handle' is reserved and it's never used in a wgsl
 " program, shoud we set this to a keyword?
 syn keyword wgslStorageClasses handle
