@@ -17,6 +17,7 @@ syn keyword wgslTypes array
 " TODO: match struct
 syn keyword wgslTypes struct
 syn keyword wgslTypes type
+syn keyword wgslTypes atomic
 " TODO: since token 'handle' is reserved and it's never used in a wgsl
 " program, shoud we set this to a keyword?
 syn keyword wgslStorageClasses handle
@@ -75,10 +76,18 @@ syn keyword wgslKeywords break continue discard for if loop return switch
 
 syn match wgslFuncCall    "\w\(\w\)*("he=e-1,me=e-1
 
-syntax match wgslNumber "\v<\d+>"
-syntax match wgslNumber "\v<(\d+_+)+\d+(\.\d+(_+\d+)*)?>"
-syntax match wgslNumber "\v<\d+\.\d+>"
-syntax match wgslNumber "\v<\d*\.?\d+([Ee]-?)?\d+>"
+" Float
+syntax match wgslNumber "\v<\d+(\.\d+)?([Ee][-+]?\d+)?>"
+syntax match wgslNumber "\v\.\d+([Ee][-+]?\d+)?>"
+syntax match wgslNumber "\v<0x\x+(\.\x+)?([Pp][-+]?\d+)?>"
+syntax match wgslNumber "\v<0x\.\x+([Pp][-+]?\d+)?>"
+
+" Integer
+syntax match wgslNumber "\v<\d+u>"
+syntax match wgslNumber "\v<0x\x+u>"
+
+" Boolean
+syntax keyword wgslBoolean true false
 
 hi def link wgslTypes Type
 hi def link wgslNumberTypes Float
@@ -100,5 +109,6 @@ hi def link wgslLocation Number
 hi def link wgslCommentLine Comment
 
 hi def link wgslNumber Number
+hi def link wgslBoolean Boolean
 
 let b:current_syntax = "wgsl"
