@@ -27,6 +27,11 @@ function! WgslIndent(lnum)
     endif
   endif
 
+  " Ending with }
+  if l:line =~# '^\s*}\s*$'
+    return l:indent - &shiftwidth
+  endif
+
   return l:indent
 endfunc
 
