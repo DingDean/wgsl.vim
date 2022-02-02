@@ -71,8 +71,8 @@ syn keyword wgslAttributes binding block builtin fragment group location stage v
 
 " Keyword
 syn keyword wgslKeywords fn
-syn keyword wgslKeywords let var
-syn keyword wgslKeywords break continue discard for if loop return switch
+syn keyword wgslKeywords let var override
+syn keyword wgslKeywords break continue discard for if loop return switch bitcast fallthrough
 
 syn match wgslFuncCall    "\w\(\w\)*("he=e-1,me=e-1
 
