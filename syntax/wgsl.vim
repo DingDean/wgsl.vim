@@ -41,6 +41,7 @@ syn keyword wgslSamplerTypes sampler sampler_comparison
 
 " Comments
 syn region wgslCommentLine start="//" end="$"
+syn region wgslCommentBlock start="/\*" end="\*/"
 
 " Expressions
 
@@ -107,6 +108,7 @@ hi def link wgslKeywords Keyword
 hi def link wgslLocation Number
 
 hi def link wgslCommentLine Comment
+hi def link wgslCommentBlock Comment
 
 hi def link wgslNumber Number
 hi def link wgslBoolean Boolean
