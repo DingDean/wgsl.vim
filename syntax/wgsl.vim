@@ -68,7 +68,7 @@ syn keyword wgslBuiltinTextureFunctions  textureSampleBias textureSampleCompare 
 syn keyword wgslDataPackingBuiltinFunctions pack4x8snorm pack4x8unorm pack2x16snorm pack2x16unorm pack2x16float
 syn keyword wgslDataPackingBuiltinFunctions unpack4x8snorm unpack4x8unorm unpack2x16snorm unpack2x16unorm unpack2x16float
 
-syn keyword wgslAttributes binding block builtin fragment group location stage vertex
+syn match wgslAttributes "@ *\(align\|binding\|builtin\|const\|diagnostic\|group\|id\|interpolate\|invariant\|location\|must_use\|size\|workgroup_size\|vertex\|fragment\|compute\)"
 
 " Keyword
 syn keyword wgslKeywords fn
