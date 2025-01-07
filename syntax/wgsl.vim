@@ -108,6 +108,7 @@ hi def link wgslSamplerTypes Type
 hi def link wgslBuiltinVariables Identifier
 hi def link wgslBuiltinFunctions Function
 hi def link wgslBuiltinTextureFunctions Function
+hi def link wgslDataPackingBuiltinFunctions Function
 hi def link wgslFuncCall Function
 
 hi def link wgslAttributes Keyword
