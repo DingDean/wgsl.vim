@@ -75,11 +75,11 @@ syn keyword wgslBuiltinTextureFunctions  textureSampleBias textureSampleCompare 
 syn keyword wgslDataPackingBuiltinFunctions pack4x8snorm pack4x8unorm pack2x16snorm pack2x16unorm pack2x16float
 syn keyword wgslDataPackingBuiltinFunctions unpack4x8snorm unpack4x8unorm unpack2x16snorm unpack2x16unorm unpack2x16float
 
-syn match wgslAttributes "@ *\(align\|binding\|builtin\|const\|diagnostic\|group\|id\|interpolate\|invariant\|location\|must_use\|size\|workgroup_size\|vertex\|fragment\|compute\)"
+syn match wgslAttributes "@ *\(alias\|align\|binding\|builtin\|const\|diagnostic\|group\|id\|interpolate\|invariant\|location\|must_use\|size\|workgroup_size\|vertex\|fragment\|compute\)"
 
 " Keyword
 syn keyword wgslKeywords fn
-syn keyword wgslKeywords const let var override
+syn keyword wgslKeywords const let var override alias
 syn keyword wgslKeywords break continue discard for if else loop return switch case bitcast fallthrough
 
 syn match wgslFuncCall    "\w\(\w\)*("he=e-1,me=e-1
