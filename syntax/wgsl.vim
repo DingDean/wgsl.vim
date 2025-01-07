@@ -11,8 +11,14 @@ syn keyword wgslTypes void
 syn keyword wgslNumberTypes u32 i32 f32 bool
 " TODO: match the whole vecN<T> pattern
 syn keyword wgslTypes vec2 vec3 vec4
+syn keyword wgslTypes vec2f vec3f vec4f
+syn keyword wgslTypes vec2u vec3u vec4u
+syn keyword wgslTypes vec2i vec3i vec4i
 " TODO mat2x2 and 432 has different syntax
 syn keyword wgslTypes mat2x2 mat2x3 mat2x4 mat3x2 mat3x3 mat3x4 mat4x2 mat4x3 mat4x4
+syn keyword wgslTypes mat2x2f mat2x3f mat2x4f mat3x2f mat3x3f mat3x4f mat4x2f mat4x3f mat4x4f
+syn keyword wgslTypes mat2x2u mat2x3u mat2x4u mat3x2u mat3x3u mat3x4u mat4x2u mat4x3u mat4x4u
+syn keyword wgslTypes mat2x2i mat2x3i mat2x4i mat3x2i mat3x3i mat3x4i mat4x2i mat4x3i mat4x4i
 syn keyword wgslTypes array
 " TODO: match struct
 syn keyword wgslTypes struct
